@@ -14,4 +14,4 @@ def add_watermark_pypdf2(input_pdf, watermark_pdf, output_pdf):
     with open(output_pdf, "wb") as output_file:
         writer.write(output_file)
 
-add_watermark_pypdf2("original.pdf", "watermark.pdf", "myself.pdf")
+add_watermark_pypdf2("original.pdf", "a8.pdf", "res2.pdf")
