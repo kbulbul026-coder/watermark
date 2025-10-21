@@ -15,3 +15,4 @@ def add_watermark_pypdf2(input_pdf, watermark_pdf, output_pdf):
         writer.write(output_file)
 
 add_watermark_pypdf2("original.pdf", "a8.pdf", "res2.pdf")
+#watermark pdf should be paper size A8 for generally A4 Paper to be marked
