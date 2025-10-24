@@ -4,12 +4,17 @@
 
 
 
-from pypdf import PdfReader, PdfWriter
+from pypdf import PdfReader, PdfWriter,Transformation
 
 stamp = PdfReader("A6.pdf").pages[0]
 writer = PdfWriter(clone_from="A8.pdf")
 for page in writer.pages:
-    page.merge_page(stamp, over=False)  # here set to False for watermarking
+    #page.merge_page(stamp, over=False)  # here set to False for watermarking
+    page.merge_transformed_page(
+            stamp,
+            Transformation().scale(.75),
+            over=False
+    )
 
 writer.write("out.pdf")
 #Othperwise use merge_transformed_page() with Transformation if you need to translate, rotate, scale, etc. the stamp before merging it to the content page.
